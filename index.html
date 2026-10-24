@@ -56,9 +56,9 @@ section h2{font-size:clamp(1.6rem,4vw,2.5rem);margin-bottom:1rem}
 .stats div{border-left:3px solid var(--teal);padding-left:1rem}
 .stats b{display:block;font:400 2.2rem "Luckiest Guy",sans-serif;color:var(--teal)}
 .stats span{color:var(--mute);font-size:.95rem}
-.orders{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.4rem}
+.orders{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.4rem}
 .order{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden}
-.order svg{display:block;width:100%;height:auto}
+.order img{display:block;width:100%;height:auto}
 .order div{padding:1rem 1.1rem 1.2rem}
 .order h3{font-size:1rem;margin-bottom:.3rem}
 .order p{margin:0;color:var(--mute);font-size:.92rem}
@@ -82,27 +82,10 @@ footer{padding:2.5rem 0 3rem;border-top:1px solid var(--line);color:var(--mute);
 </style>
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <symbol id="g" viewBox="0 0 200 200">
-      <rect width="200" height="200" fill="var(--b1)"/>
-      <circle cx="100" cy="100" r="86" fill="var(--b2)"/>
-      <circle cx="100" cy="100" r="86" fill="none" stroke="var(--a)" stroke-width="1.5" stroke-dasharray="3 7"/>
-      <path d="M38 200 Q42 150 76 142 H124 Q158 150 162 200Z" fill="var(--m)"/>
-      <path d="M76 142 L100 168 L124 142" fill="none" stroke="var(--a)" stroke-width="3"/>
-      <path d="M64 116 Q60 52 100 42 Q140 52 136 116 L126 146 H74Z" fill="var(--m)" stroke="var(--a)" stroke-width="3"/>
-      <path d="M100 42 Q108 20 132 20 Q122 34 120 48Z" fill="var(--a)"/>
-      <path d="M72 94 H128 L122 118 Q100 126 78 118Z" fill="var(--v)"/>
-      <path d="M72 94 H128" stroke="var(--a)" stroke-width="3"/>
-      <circle cx="100" cy="106" r="5" fill="var(--b1)"/>
-    </symbol>
-  </defs>
-</svg>
-
 <div class="wrap">
   <header>
     <a class="logo" href="#top">COSMIC GUARDIANS</a>
-    <nav aria-label="Main"><a href="#about">About</a><a href="#orders">The Orders</a><a href="#roadmap">Roadmap</a><a href="#faq">FAQ</a></nav>
+    <nav aria-label="Main"><a href="#about">About</a><a href="#guardians">Guardians</a><a href="#roadmap">Roadmap</a><a href="#faq">FAQ</a></nav>
   </header>
 
   <main id="top">
@@ -112,14 +95,16 @@ footer{padding:2.5rem 0 3rem;border-top:1px solid var(--line);color:var(--mute);
         <p>1,000 armored protectors of the galaxy, each one unique and stored on-chain. Hold a Guardian to raid to earn, fight in the Battle Arena, stake for rewards and more.</p>
         <div class="btns">
           <a class="btn main" href="#join">Join the Guardians</a>
-          <a class="btn" href="#orders">Meet the Orders</a>
+          <a class="btn" href="#guardians">Meet the Guardians</a>
         </div>
       </div>
-      <div class="emblem" role="img" aria-label="A Cosmic Guardian helmet surrounded by two slowly rotating orbit rings">
+      <div class="emblem" role="img" aria-label="A Cosmic Guardian mage holding a rune flame, circled by two slowly rotating orbit rings">
         <svg viewBox="0 0 400 400">
           <g class="ring"><circle cx="200" cy="200" r="190" fill="none" stroke="var(--gold)" stroke-width="2" stroke-dasharray="2 14"/><circle cx="200" cy="10" r="9" fill="var(--gold)"/></g>
           <g class="ring b"><circle cx="200" cy="200" r="162" fill="none" stroke="var(--teal)" stroke-width="1.5"/><circle cx="362" cy="200" r="7" fill="var(--teal)"/><circle cx="38" cy="200" r="4" fill="var(--pink)"/></g>
-          <svg x="70" y="70" width="260" height="260" viewBox="0 0 200 200" style="--b1:transparent;--b2:#3a2418;--m:#6b4430;--a:#f2b84b;--v:#ffd98a"><use href="#g"/></svg>
+          <defs><clipPath id="hc"><circle cx="200" cy="200" r="135"/></clipPath></defs>
+          <image href="images/guardian-3.jpg" x="65" y="65" width="270" height="270" preserveAspectRatio="xMidYMid slice" clip-path="url(#hc)"/>
+          <circle cx="200" cy="200" r="135" fill="none" stroke="var(--ink)" stroke-width="4"/>
         </svg>
       </div>
     </div>
@@ -130,19 +115,16 @@ footer{padding:2.5rem 0 3rem;border-top:1px solid var(--line);color:var(--mute);
     <p class="lede">Cosmic Guardians is a collection of 1,000 hand-designed characters, each assembled from over 150 traits. Owning one makes you part of the watch: a community that shapes the story, the art and the rewards together.</p>
     <div class="stats">
       <div><b>1,000</b><span>Guardians in the collection</span></div>
-      <div><b>4</b><span>Orders, each with its own powers</span></div>
+      <div><b>3+</b><span>Ways to play: Raid to Earn, Battle Arena and staking</span></div>
       <div><b>150+</b><span>Traits across armor, visor and crest</span></div>
     </div>
   </section>
 
-  <section id="orders">
-    <h2>The four Orders</h2>
-    <p class="lede">Every Guardian swears to one Order. Your Order decides your look, your rarity and your role in the community.</p>
+  <section id="guardians">
+    <h2>Meet the Guardians</h2>
+    <p class="lede">Every Guardian has its own skin, outfit and weapon. Here are six of the 1,000.</p>
     <div class="orders">
-      <article class="order"><svg viewBox="0 0 200 200" role="img" aria-label="Sunwarden helmet in gold"><use href="#g" style="--b1:#2a1a3a;--b2:#5a2f45;--m:#8a4a3a;--a:#f2b84b;--v:#ffd98a"/></svg><div><h3>Sunwarden</h3><p>400 Guardians. Frontline defenders of the inner worlds.</p></div></article>
-      <article class="order"><svg viewBox="0 0 200 200" role="img" aria-label="Nebula Seer helmet in magenta"><use href="#g" style="--b1:#2a1040;--b2:#51206e;--m:#7a3c9e;--a:#ee5fb7;--v:#ff9bd9"/></svg><div><h3>Nebula Seer</h3><p>300 Guardians. Readers of star maps and future paths.</p></div></article>
-      <article class="order"><svg viewBox="0 0 200 200" role="img" aria-label="Voidwalker helmet in teal"><use href="#g" style="--b1:#06232f;--b2:#0e4553;--m:#1f6f7a;--a:#3fd9c7;--v:#9ff5ea"/></svg><div><h3>Voidwalker</h3><p>200 Guardians. Scouts who cross the dark between systems.</p></div></article>
-      <article class="order"><svg viewBox="0 0 200 200" role="img" aria-label="Starforger helmet in silver and violet"><use href="#g" style="--b1:#16183a;--b2:#2d2f6a;--m:#9aa0d6;--a:#e9e6ff;--v:#8c7bff"/></svg><div><h3>Starforger</h3><p>100 Guardians. The rarest Order, builders of the Guardian fleet.</p></div></article>
+      <article class="order"><img src="images/guardian-1.jpg" width="640" height="512" alt="Grey-skinned Cosmic Guardian with red face paint holding a glowing plasma pistol on an orange background" loading="lazy"><div><h3>Ashen Raider</h3><p>A grey-skinned raider in a battered leather harness and bandaged fists, raising a glowing plasma pistol.</p></div></article><article class="order"><img src="images/guardian-2.jpg" width="640" height="512" alt="Blue-skinned Cosmic Guardian in a black tuxedo holding a sword on a purple background" loading="lazy"><div><h3>Midnight Duelist</h3><p>A blue-skinned guardian in a black tuxedo and bow tie, holding up a runed steel sword.</p></div></article><article class="order"><img src="images/guardian-3.jpg" width="640" height="512" alt="Bald Cosmic Guardian in a rune-covered robe holding a magical flame on a gold background" loading="lazy"><div><h3>Rune Mage</h3><p>A mage in a purple robe stitched with runes, holding a blue and violet flame in an open palm.</p></div></article><article class="order"><img src="images/guardian-4.jpg" width="640" height="512" alt="Cosmic Guardian in a navy suit and red tie holding a pistol on a red background" loading="lazy"><div><h3>Crimson Enforcer</h3><p>A sharp-dressed guardian in a navy three-piece suit and red tie, with a silver pistol in one hand and a blade in the other.</p></div></article><article class="order"><img src="images/guardian-5.jpg" width="640" height="512" alt="Green-skinned Cosmic Guardian in steel armor holding a battle axe on a brown background" loading="lazy"><div><h3>Iron Berserker</h3><p>A green-skinned warrior in steel plate armor, gripping a rune-etched battle axe.</p></div></article><article class="order"><img src="images/guardian-6.jpg" width="640" height="512" alt="Blue-skinned Cosmic Guardian in a white spacesuit holding a sci-fi blaster on a grey background" loading="lazy"><div><h3>Star Explorer</h3><p>A blue-skinned guardian in a white rune-marked spacesuit, carrying a multi-barrel energy blaster.</p></div></article>
     </div>
   </section>
 
@@ -151,14 +133,14 @@ footer{padding:2.5rem 0 3rem;border-top:1px solid var(--line);color:var(--mute);
     <ol class="road">
       <li><b>Phase 1</b><div><h3>Assemble</h3><p>Launch the website, open Discord and X, and start the allowlist.</p></div></li>
       <li><b>Phase 2</b><div><h3>Mint</h3><p>Allowlist mint, then public mint of all 1,000 Guardians.</p></div></li>
-      <li><b>Phase 3</b><div><h3>Reveal</h3><p>Reveal every Order, open the holder lounge and start community votes.</p></div></li>
+      <li><b>Phase 3</b><div><h3>Reveal</h3><p>Reveal every Guardian, open the holder lounge and start community votes.</p></div></li>
       <li><b>Phase 4</b><div><h3>Expand</h3><p>Holder rewards, collaborations and the first Guardian story chapters.</p></div></li>
     </ol>
   </section>
 
   <section id="faq">
     <h2>Questions</h2>
-    <details><summary>How many Guardians are there?</summary><p>1,000, split across four Orders.</p></details>
+    <details><summary>How many Guardians are there?</summary><p>1,000, each with its own look, outfit and weapon.</p></details>
     <details><summary>What does a Guardian cost to mint?</summary><p>Mint price and date will be announced here and in Discord before the sale opens.</p></details>
     <details><summary>Which blockchain is the collection on?</summary><p>Solana. Details of the contract will be published here before mint.</p></details>
     <details><summary>What do holders get?</summary><p>Holders get access to Raid to Earn, the Battle Arena and staking, plus voting rights on community decisions, the holder lounge, early access to future drops and more to come.</p></details>
@@ -168,8 +150,8 @@ footer{padding:2.5rem 0 3rem;border-top:1px solid var(--line);color:var(--mute);
     <h2>Join the watch</h2>
     <p class="lede">Get on the allowlist and be first to know when minting opens.</p>
     <div class="btns" style="margin-top:1.6rem">
-      <a class="btn main" href="#">Join Discord</a>
-      <a class="btn" href="#">Follow on X</a>
+      <a class="btn main" href="https://discord.gg/X7KUPHkcJ" target="_blank" rel="noopener noreferrer">Join Discord</a>
+      <a class="btn" href="https://x.com/Cosmic_Guard" target="_blank" rel="noopener noreferrer">Follow on X</a>
     </div>
   </section>
 
