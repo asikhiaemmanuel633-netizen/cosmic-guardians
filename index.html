@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cosmic Guardians</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#d2b59a;--bg2:#e6d2bd;--ink:#2d1a10;--mute:#5e4331;--gold:#d9811c;--teal:#0a5f57;--pink:#a3225f;--line:rgba(45,26,16,.22);--card:rgba(255,248,238,.45);
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:light){
+  :root{color-scheme:light}
+}
+:root[data-theme="light"]{color-scheme:light}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.1rem/1.6 "Fredoka",system-ui,sans-serif;overflow-x:hidden;
+  background-image:radial-gradient(1.5px 1.5px at 12% 18%,var(--ink) 50%,transparent 51%),radial-gradient(1px 1px at 78% 9%,var(--ink) 50%,transparent 51%),radial-gradient(1.5px 1.5px at 88% 62%,var(--ink) 50%,transparent 51%),radial-gradient(1px 1px at 34% 74%,var(--ink) 50%,transparent 51%),radial-gradient(1px 1px at 55% 38%,var(--ink) 50%,transparent 51%),radial-gradient(900px 600px at 80% 0%,var(--bg2),transparent 70%);
+  background-size:520px 520px,430px 430px,610px 610px,380px 380px,470px 470px,auto;background-repeat:repeat,repeat,repeat,repeat,repeat,no-repeat}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+h1,h2,h3{font-family:"Luckiest Guy","Fredoka",system-ui,sans-serif;font-weight:400;letter-spacing:.02em;line-height:1.1;margin:0;text-shadow:.05em .06em 0 var(--pink)}
+h3{text-shadow:none}
+.wrap{width:min(1100px,100% - 2.5rem);margin-inline:auto}
+header{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 0}
+.logo{font:400 1.25rem "Luckiest Guy",sans-serif;text-decoration:none;letter-spacing:.04em;color:var(--ink)}
+nav{display:flex;gap:1.4rem;flex-wrap:wrap}
+nav a{text-decoration:none;color:var(--mute);font-weight:600;font-size:.95rem}
+nav a:hover{color:var(--ink)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center;padding:3rem 0 5rem}
+.hero h1{font-size:clamp(2.8rem,9vw,5.6rem);color:var(--gold);text-shadow:.05em .06em 0 var(--pink);-webkit-text-stroke:2px #2d1a10;paint-order:stroke fill}
+.bounce .w{display:inline-block;white-space:nowrap}
+.bounce i{display:inline-block;font-style:normal;animation:hop 2.6s ease-in-out infinite;animation-delay:calc(var(--i)*.09s)}
+@keyframes hop{0%,55%,100%{transform:translateY(0) rotate(0)}25%{transform:translateY(-.16em) rotate(-5deg)}40%{transform:translateY(0) rotate(2deg)}}
+@media (prefers-reduced-motion:reduce){.bounce i{animation:none}}
+.hero p{max-width:34rem;color:var(--mute);font-size:1.15rem;margin:1.4rem 0 2rem}
+.btns{display:flex;gap:.9rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.8rem 1.6rem;border-radius:999px;font:400 1.15rem "Luckiest Guy",sans-serif;letter-spacing:.03em;text-decoration:none;border:1.5px solid var(--ink)}
+.btn.main{background:var(--gold);border-color:var(--gold);color:#2d1a10}
+.btn.main:hover{filter:brightness(1.1)}
+.btn:not(.main):hover{background:var(--card)}
+.emblem{position:relative;aspect-ratio:1;width:100%;max-width:460px;justify-self:center}
+.emblem svg{width:100%;height:100%;display:block}
+.ring{transform-origin:200px 200px;animation:spin 60s linear infinite}
+.ring.b{animation-duration:90s;animation-direction:reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.ring{animation:none}}
+section{padding:4.5rem 0;border-top:1px solid var(--line)}
+section h2{font-size:clamp(1.6rem,4vw,2.5rem);margin-bottom:1rem}
+.lede{max-width:40rem;color:var(--mute)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.2rem}
+.stats div{border-left:3px solid var(--teal);padding-left:1rem}
+.stats b{display:block;font:400 2.2rem "Luckiest Guy",sans-serif;color:var(--teal)}
+.stats span{color:var(--mute);font-size:.95rem}
+.orders{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.4rem}
+.order{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.order svg{display:block;width:100%;height:auto}
+.order div{padding:1rem 1.1rem 1.2rem}
+.order h3{font-size:1rem;margin-bottom:.3rem}
+.order p{margin:0;color:var(--mute);font-size:.92rem}
+.road{list-style:none;margin:2.4rem 0 0;padding:0;display:grid;gap:0;max-width:44rem}
+.road li{display:grid;grid-template-columns:7.5rem 1fr;gap:1.2rem;padding:1.3rem 0;border-bottom:1px solid var(--line)}
+.road b{font-family:"Luckiest Guy",sans-serif;font-weight:400;font-size:1.2rem;color:var(--pink)}
+.road p{margin:.2rem 0 0;color:var(--mute)}
+details{border-bottom:1px solid var(--line);padding:1rem 0;max-width:44rem}
+summary{cursor:pointer;font-weight:600;list-style-position:outside}
+details p{color:var(--mute);margin:.6rem 0 0}
+.join{text-align:left}
+footer{padding:2.5rem 0 3rem;border-top:1px solid var(--line);color:var(--mute);font-size:.92rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr;padding-top:1rem}
+  .emblem{order:-1;max-width:320px}
+  .orders{grid-template-columns:repeat(2,1fr)}
+  .stats{grid-template-columns:1fr}
+  .road li{grid-template-columns:1fr;gap:.2rem}
+}
+@media (max-width:480px){.orders{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="g" viewBox="0 0 200 200">
+      <rect width="200" height="200" fill="var(--b1)"/>
+      <circle cx="100" cy="100" r="86" fill="var(--b2)"/>
+      <circle cx="100" cy="100" r="86" fill="none" stroke="var(--a)" stroke-width="1.5" stroke-dasharray="3 7"/>
+      <path d="M38 200 Q42 150 76 142 H124 Q158 150 162 200Z" fill="var(--m)"/>
+      <path d="M76 142 L100 168 L124 142" fill="none" stroke="var(--a)" stroke-width="3"/>
+      <path d="M64 116 Q60 52 100 42 Q140 52 136 116 L126 146 H74Z" fill="var(--m)" stroke="var(--a)" stroke-width="3"/>
+      <path d="M100 42 Q108 20 132 20 Q122 34 120 48Z" fill="var(--a)"/>
+      <path d="M72 94 H128 L122 118 Q100 126 78 118Z" fill="var(--v)"/>
+      <path d="M72 94 H128" stroke="var(--a)" stroke-width="3"/>
+      <circle cx="100" cy="106" r="5" fill="var(--b1)"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="wrap">
+  <header>
+    <a class="logo" href="#top">COSMIC GUARDIANS</a>
+    <nav aria-label="Main"><a href="#about">About</a><a href="#orders">The Orders</a><a href="#roadmap">Roadmap</a><a href="#faq">FAQ</a></nav>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <div>
+        <h1 class="bounce" aria-label="Cosmic Guardians"><span class="w" aria-hidden="true"><i style="--i:0">C</i><i style="--i:1">o</i><i style="--i:2">s</i><i style="--i:3">m</i><i style="--i:4">i</i><i style="--i:5">c</i></span> <span class="w" aria-hidden="true"><i style="--i:6">G</i><i style="--i:7">u</i><i style="--i:8">a</i><i style="--i:9">r</i><i style="--i:10">d</i><i style="--i:11">i</i><i style="--i:12">a</i><i style="--i:13">n</i><i style="--i:14">s</i></span></h1>
+        <p>1,000 armored protectors of the galaxy, each one unique and stored on-chain. Hold a Guardian to raid to earn, fight in the Battle Arena, stake for rewards and more.</p>
+        <div class="btns">
+          <a class="btn main" href="#join">Join the Guardians</a>
+          <a class="btn" href="#orders">Meet the Orders</a>
+        </div>
+      </div>
+      <div class="emblem" role="img" aria-label="A Cosmic Guardian helmet surrounded by two slowly rotating orbit rings">
+        <svg viewBox="0 0 400 400">
+          <g class="ring"><circle cx="200" cy="200" r="190" fill="none" stroke="var(--gold)" stroke-width="2" stroke-dasharray="2 14"/><circle cx="200" cy="10" r="9" fill="var(--gold)"/></g>
+          <g class="ring b"><circle cx="200" cy="200" r="162" fill="none" stroke="var(--teal)" stroke-width="1.5"/><circle cx="362" cy="200" r="7" fill="var(--teal)"/><circle cx="38" cy="200" r="4" fill="var(--pink)"/></g>
+          <svg x="70" y="70" width="260" height="260" viewBox="0 0 200 200" style="--b1:transparent;--b2:#3a2418;--m:#6b4430;--a:#f2b84b;--v:#ffd98a"><use href="#g"/></svg>
+        </svg>
+      </div>
+    </div>
+  </main>
+
+  <section id="about">
+    <h2>Born from the stars, sworn to protect them</h2>
+    <p class="lede">Cosmic Guardians is a collection of 1,000 hand-designed characters, each assembled from over 150 traits. Owning one makes you part of the watch: a community that shapes the story, the art and the rewards together.</p>
+    <div class="stats">
+      <div><b>1,000</b><span>Guardians in the collection</span></div>
+      <div><b>4</b><span>Orders, each with its own powers</span></div>
+      <div><b>150+</b><span>Traits across armor, visor and crest</span></div>
+    </div>
+  </section>
+
+  <section id="orders">
+    <h2>The four Orders</h2>
+    <p class="lede">Every Guardian swears to one Order. Your Order decides your look, your rarity and your role in the community.</p>
+    <div class="orders">
+      <article class="order"><svg viewBox="0 0 200 200" role="img" aria-label="Sunwarden helmet in gold"><use href="#g" style="--b1:#2a1a3a;--b2:#5a2f45;--m:#8a4a3a;--a:#f2b84b;--v:#ffd98a"/></svg><div><h3>Sunwarden</h3><p>400 Guardians. Frontline defenders of the inner worlds.</p></div></article>
+      <article class="order"><svg viewBox="0 0 200 200" role="img" aria-label="Nebula Seer helmet in magenta"><use href="#g" style="--b1:#2a1040;--b2:#51206e;--m:#7a3c9e;--a:#ee5fb7;--v:#ff9bd9"/></svg><div><h3>Nebula Seer</h3><p>300 Guardians. Readers of star maps and future paths.</p></div></article>
+      <article class="order"><svg viewBox="0 0 200 200" role="img" aria-label="Voidwalker helmet in teal"><use href="#g" style="--b1:#06232f;--b2:#0e4553;--m:#1f6f7a;--a:#3fd9c7;--v:#9ff5ea"/></svg><div><h3>Voidwalker</h3><p>200 Guardians. Scouts who cross the dark between systems.</p></div></article>
+      <article class="order"><svg viewBox="0 0 200 200" role="img" aria-label="Starforger helmet in silver and violet"><use href="#g" style="--b1:#16183a;--b2:#2d2f6a;--m:#9aa0d6;--a:#e9e6ff;--v:#8c7bff"/></svg><div><h3>Starforger</h3><p>100 Guardians. The rarest Order, builders of the Guardian fleet.</p></div></article>
+    </div>
+  </section>
+
+  <section id="roadmap">
+    <h2>Roadmap</h2>
+    <ol class="road">
+      <li><b>Phase 1</b><div><h3>Assemble</h3><p>Launch the website, open Discord and X, and start the allowlist.</p></div></li>
+      <li><b>Phase 2</b><div><h3>Mint</h3><p>Allowlist mint, then public mint of all 1,000 Guardians.</p></div></li>
+      <li><b>Phase 3</b><div><h3>Reveal</h3><p>Reveal every Order, open the holder lounge and start community votes.</p></div></li>
+      <li><b>Phase 4</b><div><h3>Expand</h3><p>Holder rewards, collaborations and the first Guardian story chapters.</p></div></li>
+    </ol>
+  </section>
+
+  <section id="faq">
+    <h2>Questions</h2>
+    <details><summary>How many Guardians are there?</summary><p>1,000, split across four Orders.</p></details>
+    <details><summary>What does a Guardian cost to mint?</summary><p>Mint price and date will be announced here and in Discord before the sale opens.</p></details>
+    <details><summary>Which blockchain is the collection on?</summary><p>Solana. Details of the contract will be published here before mint.</p></details>
+    <details><summary>What do holders get?</summary><p>Holders get access to Raid to Earn, the Battle Arena and staking, plus voting rights on community decisions, the holder lounge, early access to future drops and more to come.</p></details>
+  </section>
+
+  <section id="join" class="join">
+    <h2>Join the watch</h2>
+    <p class="lede">Get on the allowlist and be first to know when minting opens.</p>
+    <div class="btns" style="margin-top:1.6rem">
+      <a class="btn main" href="#">Join Discord</a>
+      <a class="btn" href="#">Follow on X</a>
+    </div>
+  </section>
+
+  <footer><span>© 2026 Cosmic Guardians</span><span>NFTs are digital assets and carry financial risk. Do your own research.</span></footer>
+</div>
+</body>
+</html>
